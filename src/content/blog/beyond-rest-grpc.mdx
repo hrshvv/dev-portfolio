@@ -1,0 +1,41 @@
+---
+title: "Beyond REST: Understanding gRPC for Service-to-Service Communication"
+date: "2026-11-16"
+summary: "A practical look at gRPC, Protocol Buffers, and when to choose it over REST in distributed systems."
+tags: ["Backend", "gRPC", "System Design"]
+published: true
+---
+
+REST over JSON is the default choice for most web APIs—and for good reason. It's human-readable, universally supported by browsers, and easy to debug. However, when services talk to other internal services at high throughput, JSON serialization and HTTP/1.1 overhead start to add up.
+
+## Why gRPC?
+
+gRPC uses **HTTP/2** as its transport and **Protocol Buffers (Protobuf)** as its interface definition language and binary serialization format.
+
+- **Strict contracts:** Your `.proto` schema is the single source of truth for both client and server.
+- **Compact payloads:** Binary serialization is significantly smaller and faster to parse than JSON.
+- **Streaming out of the box:** Unary, server-streaming, client-streaming, and bidirectional streaming are first-class primitives.
+
+```protobuf
+syntax = "proto3";
+
+package orders.v1;
+
+service OrderService {
+  rpc GetOrder (GetOrderRequest) returns (OrderResponse);
+}
+
+message GetOrderRequest {
+  string order_id = 1;
+}
+
+message OrderResponse {
+  string order_id = 1;
+  string status = 2;
+  int64 total_cents = 3;
+}
+```
+
+## When to Stick with REST
+
+If you're building public APIs consumed directly by browsers or third-party webhooks, REST (or GraphQL) remains simpler to adopt and debug. Use gRPC where **low latency**, **strong typing across languages**, and **internal microservice performance** matter most.
