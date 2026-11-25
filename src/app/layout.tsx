@@ -43,7 +43,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="flex min-h-screen flex-col bg-zinc-950 text-zinc-50 antialiased">
+      <body className="relative flex min-h-screen flex-col text-zinc-50 antialiased">
+        <div
+          aria-hidden="true"
+          className="bg-grid pointer-events-none fixed inset-0 -z-10"
+        />
         <Navbar />
         <main className="mx-auto w-full max-w-3xl flex-1 px-6">{children}</main>
         <Footer />
