@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
-  Disc3,
   FileText,
   Github,
   Linkedin,
@@ -18,6 +17,7 @@ import {
   Twitter,
 } from "lucide-react";
 import { profile, type SocialLink } from "@/data/profile";
+import { MusicPlayer } from "@/components/ui/MusicPlayer";
 
 function SocialIcon({ icon }: { icon: SocialLink["icon"] }) {
   switch (icon) {
@@ -261,29 +261,8 @@ export function Hero() {
         </Link>
       </div>
 
-      {/* Compact Favorite / Now Playing Card */}
-      <div className="mt-8 flex items-center justify-between rounded-xl border border-zinc-800/80 bg-zinc-900/40 px-4 py-3">
-        <div className="flex items-center gap-3">
-          <Disc3
-            className={`h-8 w-8 text-zinc-300 ${
-              bannerPlaying && !shouldReduceMotion ? "animate-spin" : ""
-            }`}
-            style={{ animationDuration: "6s" }}
-          />
-          <div>
-            <p className="text-xs font-medium text-zinc-200">
-              {profile.favoriteTrack.title}
-            </p>
-            <p className="font-mono text-[11px] text-zinc-500">
-              {profile.favoriteTrack.artist}
-            </p>
-          </div>
-        </div>
-        <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-emerald-400">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          <span>{profile.availability}</span>
-        </span>
-      </div>
+      {/* Vinyl Music Player */}
+      <MusicPlayer tracks={profile.favoriteTracks} />
     </motion.section>
   );
 }

@@ -4,18 +4,22 @@ export interface SocialLink {
   icon: "github" | "linkedin" | "twitter" | "mail";
 }
 
+export interface Track {
+  title: string;
+  artist: string;
+  src?: string;
+}
+
 export interface Profile {
   name: string;
   brand: string;
+  githubUsername: string;
   role: string;
   availability: string;
   headline: string;
   tagline: string;
   bannerLines: string[];
-  favoriteTrack: {
-    title: string;
-    artist: string;
-  };
+  favoriteTracks: Track[];
   aboutParagraphs: string[];
   pillars: {
     title: string;
@@ -31,16 +35,25 @@ export interface Profile {
 export const profile: Profile = {
   name: "Your Name",
   brand: "yourname.dev",
+  githubUsername: "yourusername",
   role: "Full Stack Developer",
   availability: "Open to opportunities",
   headline: "I build reliable systems from 0→1 and scale them from 1→100.",
   tagline:
     "Software Engineer focused on building reliable backend systems and full-stack applications. Passionate about backend engineering, system design, and building things that work well under the hood and look good on the surface.",
   bannerLines: ["GRIND", "GRIND", "GRIND"],
-  favoriteTrack: {
-    title: "Midnight City",
-    artist: "M83 · Favorite",
-  },
+  favoriteTracks: [
+    {
+      title: "The Less I Know the Better",
+      artist: "Tame Impala",
+      src: "/audio/track-1.mp3",
+    },
+    {
+      title: "Midnight City",
+      artist: "M83",
+      src: "/audio/track-2.mp3",
+    },
+  ],
   aboutParagraphs: [
     "I'm a software engineer with experience designing and shipping production backend services, APIs, and full-stack web applications. I care deeply about system reliability, clean abstractions, and interfaces that feel effortless to use.",
     "Whether it's architecting a database schema, optimizing service-to-service communication, or crafting a responsive frontend, I enjoy owning problems end-to-end—from first commit to production monitoring.",
