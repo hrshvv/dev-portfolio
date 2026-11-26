@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" rx="16" fill="#0c0c0f" />
+  <rect x="24" y="24" width="752" height="402" rx="12" stroke="#27272a" stroke-width="2" />
+  <rect x="44" y="44" width="712" height="362" rx="8" stroke="#18181b" stroke-width="1" />
+  <circle cx="400" cy="145" r="36" fill="#18181b" stroke="#3f3f46" stroke-width="2" />
+  <path d="M388 145l8 8 16-18" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="400" y="218" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="14" letter-spacing="4">PROFESSIONAL CERTIFICATE</text>
+  <text x="400" y="260" text-anchor="middle" fill="#fafafa" font-family="system-ui, sans-serif" font-size="28" font-weight="700">Meta Back-End Developer</text>
+  <text x="400" y="298" text-anchor="middle" fill="#71717a" font-family="system-ui, sans-serif" font-size="16">Coursera · Meta · 2024</text>
+  <line x1="280" y1="340" x2="520" y2="340" stroke="#27272a" stroke-width="1.5" />
+  <text x="400" y="370" text-anchor="middle" fill="#52525b" font-family="monospace" font-size="12">VERIFIED CREDENTIAL</text>
+</svg>

@@ -1,21 +1,16 @@
 import { profile } from "@/data/profile";
-import { getAllPosts } from "@/lib/blog";
 import { getGitHubActivity } from "@/lib/github";
 import { Hero } from "@/components/sections/Hero";
 import { MusicPlayer } from "@/components/ui/MusicPlayer";
 import { GitHubActivity } from "@/components/sections/GitHubActivity";
-import { About } from "@/components/sections/About";
-import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
-import { RecentPosts } from "@/components/sections/RecentPosts";
+import { Certifications } from "@/components/sections/Certifications";
 import { Contact } from "@/components/sections/Contact";
+import { Insights } from "@/components/sections/Insights";
 
 export default async function HomePage() {
-  const [posts, githubData] = await Promise.all([
-    Promise.resolve(getAllPosts()),
-    getGitHubActivity(profile.githubUsername),
-  ]);
+  const githubData = await getGitHubActivity(profile.githubUsername);
 
   return (
     <>
@@ -26,10 +21,9 @@ export default async function HomePage() {
       <GitHubActivity data={githubData} />
       <Projects />
       <Skills />
-      <About />
-      <Experience />
-      <RecentPosts posts={posts} />
+      <Certifications />
       <Contact />
+      <Insights />
     </>
   );
 }

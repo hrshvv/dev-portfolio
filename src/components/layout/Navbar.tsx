@@ -8,6 +8,7 @@ import { profile } from "@/data/profile";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/#projects" },
+  { label: "Certifications", href: "/certifications" },
   { label: "Experience", href: "/#experience" },
   { label: "About", href: "/#about" },
 ];

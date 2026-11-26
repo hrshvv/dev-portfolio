@@ -18,6 +18,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: `${profile.siteUrl}/certifications`,
+      lastModified: new Date(),
+    },
+    {
       url: `${profile.siteUrl}/blog`,
       lastModified: new Date(),
     },
