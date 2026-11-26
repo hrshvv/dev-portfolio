@@ -20,6 +20,7 @@ export interface Profile {
   tagline: string;
   bannerLines: string[];
   favoriteTracks: Track[];
+  spotifyPlaylistUrl?: string;
   aboutParagraphs: string[];
   pillars: {
     title: string;
@@ -42,6 +43,8 @@ export const profile: Profile = {
   tagline:
     "Software Engineer focused on building reliable backend systems and full-stack applications. Passionate about backend engineering, system design, and building things that work well under the hood and look good on the surface.",
   bannerLines: ["GRIND", "GRIND", "GRIND"],
+  // Paste your public Spotify playlist URL here (e.g. "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M")
+  spotifyPlaylistUrl: "https://open.spotify.com/playlist/49udr65xG81QSucNyE3gwb?si=f81f37abb31249f8",
   favoriteTracks: [
     {
       title: "The Less I Know the Better",
