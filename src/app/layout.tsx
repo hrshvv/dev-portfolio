@@ -49,7 +49,7 @@ export default function RootLayout({
           className="bg-grid pointer-events-none fixed inset-0 -z-10"
         />
         <Navbar />
-        <main className="mx-auto w-full max-w-3xl flex-1 px-6">{children}</main>
+        <main className="mx-auto w-full max-w-4xl flex-1 px-6">{children}</main>
         <Footer />
       </body>
     </html>

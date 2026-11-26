@@ -20,17 +20,17 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-zinc-800/60 bg-zinc-950/80 backdrop-blur-md">
       <nav
         aria-label="Primary Navigation"
-        className="mx-auto flex h-14 max-w-3xl items-center justify-between px-6"
+        className="mx-auto flex h-16 max-w-4xl items-center justify-between px-6"
       >
         <Link
           href="/"
-          className="font-mono text-sm font-semibold tracking-tight text-zinc-100 transition-colors hover:text-white"
+          className="font-mono text-base font-bold tracking-tight text-zinc-100 transition-colors hover:text-white"
         >
           {profile.brand}
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-7 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -41,10 +41,10 @@ export function Navbar() {
             </Link>
           ))}
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             <Link
               href="/#contact"
-              className="rounded-md border border-zinc-800 bg-zinc-900 px-3 py-1 font-mono text-xs text-zinc-200 transition-colors hover:border-zinc-700 hover:bg-zinc-800"
+              className="rounded-full border border-zinc-800 bg-zinc-900 px-3.5 py-1.5 font-mono text-xs text-zinc-200 transition-colors hover:border-zinc-700 hover:bg-zinc-800"
             >
               Connect
             </Link>
@@ -54,12 +54,12 @@ export function Navbar() {
               onClick={() => setIsDark((prev) => !prev)}
               aria-label="Toggle theme"
               title="Toggle theme"
-              className="rounded-md border border-zinc-800 bg-zinc-900/70 p-1.5 text-zinc-400 transition-colors hover:border-zinc-700 hover:bg-zinc-800 hover:text-zinc-100"
+              className="rounded-full border border-zinc-800 bg-zinc-900/70 p-2 text-zinc-400 transition-colors hover:border-zinc-700 hover:bg-zinc-800 hover:text-zinc-100"
             >
               {isDark ? (
-                <Sun className="h-3.5 w-3.5" />
+                <Sun className="h-4 w-4" />
               ) : (
-                <Moon className="h-3.5 w-3.5" />
+                <Moon className="h-4 w-4" />
               )}
             </button>
           </div>

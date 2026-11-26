@@ -2,6 +2,7 @@ import { profile } from "@/data/profile";
 import { getAllPosts } from "@/lib/blog";
 import { getGitHubActivity } from "@/lib/github";
 import { Hero } from "@/components/sections/Hero";
+import { MusicPlayer } from "@/components/ui/MusicPlayer";
 import { GitHubActivity } from "@/components/sections/GitHubActivity";
 import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
@@ -19,6 +20,9 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+      <div className="pb-12">
+        <MusicPlayer tracks={profile.favoriteTracks} />
+      </div>
       <GitHubActivity data={githubData} />
       <About />
       <Experience />

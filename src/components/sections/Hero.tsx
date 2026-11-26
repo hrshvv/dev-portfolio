@@ -17,7 +17,6 @@ import {
   Twitter,
 } from "lucide-react";
 import { profile, type SocialLink } from "@/data/profile";
-import { MusicPlayer } from "@/components/ui/MusicPlayer";
 
 function SocialIcon({ icon }: { icon: SocialLink["icon"] }) {
   switch (icon) {
@@ -78,7 +77,7 @@ export function Hero() {
       initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="pt-8 pb-16 sm:pt-10 sm:pb-20"
+      className="pt-10 pb-10 sm:pt-12 sm:pb-10"
     >
       {/* Cover Banner */}
       <div className="relative h-40 w-full overflow-hidden rounded-xl border border-zinc-800/80 sm:h-48">
@@ -213,7 +212,7 @@ export function Hero() {
 
       {/* Bio Paragraph + More about me */}
       <div className="mt-6 max-w-2xl space-y-3">
-        <p className="text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+        <p className="text-base leading-relaxed text-zinc-400 sm:text-lg">
           {profile.tagline}
         </p>
 
@@ -260,9 +259,6 @@ export function Hero() {
           <Terminal className="h-4 w-4" />
         </Link>
       </div>
-
-      {/* Vinyl Music Player */}
-      <MusicPlayer tracks={profile.favoriteTracks} />
     </motion.section>
   );
 }

@@ -19,7 +19,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-zinc-800/60">
-      <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
+      <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
         <p className="font-mono text-xs text-zinc-500">
           © {year} {profile.name}. Built with Next.js & Tailwind CSS.
         </p>

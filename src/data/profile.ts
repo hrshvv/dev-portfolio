@@ -35,7 +35,7 @@ export interface Profile {
 export const profile: Profile = {
   name: "Your Name",
   brand: "yourname.dev",
-  githubUsername: "yourusername",
+  githubUsername: "hrshvv",
   role: "Full Stack Developer",
   availability: "Open to opportunities",
   headline: "I build reliable systems from 0→1 and scale them from 1→100.",
@@ -82,7 +82,7 @@ export const profile: Profile = {
   socials: [
     {
       label: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/hrshvv",
       icon: "github",
     },
     {
