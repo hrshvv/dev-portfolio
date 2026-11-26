@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { profile } from "@/data/profile";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -44,6 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="relative flex min-h-screen flex-col text-zinc-50 antialiased">
+        <SmoothScroll />
         <div
           aria-hidden="true"
           className="bg-grid pointer-events-none fixed inset-0 -z-10"

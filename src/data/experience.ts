@@ -9,9 +9,9 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    company: "Acme Cloud Systems",
+    company: "Central Lens",
     role: "Software Engineer",
-    period: "2024 — Present",
+    period: "September 2026 — October 2026",
     location: "Remote",
     highlights: [
       "Architected and maintained core backend microservices handling high-throughput API traffic with sub-50ms p95 latency.",

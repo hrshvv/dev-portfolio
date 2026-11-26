@@ -33,8 +33,8 @@ export interface Profile {
 }
 
 export const profile: Profile = {
-  name: "Your Name",
-  brand: "yourname.dev",
+  name: "Harsh Verma",
+  brand: "hrsh",
   githubUsername: "hrshvv",
   role: "Full Stack Developer",
   availability: "Open to opportunities",
@@ -75,8 +75,8 @@ export const profile: Profile = {
         "Containerizing workloads, automating CI/CD workflows, and keeping deployments predictable and observable.",
     },
   ],
-  email: "hello@yourname.dev",
-  location: "Remote / Worldwide",
+  email: "contach.hv727@gmail.com",
+  location: "Noida, India",
   resumeUrl: "/resume.pdf",
   siteUrl: "https://yourname.dev",
   socials: [
@@ -87,17 +87,17 @@ export const profile: Profile = {
     },
     {
       label: "LinkedIn",
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://linkedin.com/in/harshverma727",
       icon: "linkedin",
     },
     {
       label: "X / Twitter",
-      href: "https://x.com/yourusername",
+      href: "https://x.com/_hrshv",
       icon: "twitter",
     },
     {
       label: "Email",
-      href: "mailto:hello@yourname.dev",
+      href: "mailto:contach.hv727@gmail.com",
       icon: "mail",
     },
   ],
