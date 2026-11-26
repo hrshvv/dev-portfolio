@@ -1,33 +1,35 @@
-import { skillCategories } from "@/data/skills";
-import { Badge } from "@/components/ui/Badge";
+import { techStack } from "@/data/skills";
 import { MotionSection } from "@/components/ui/MotionSection";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Skills() {
   return (
-    <MotionSection id="skills" className="border-t border-zinc-800/60 py-16">
-      <SectionHeading
-        eyebrow="04 / Skills"
-        title="Tech Stack"
-        description="Languages, frameworks, and infrastructure tools I use regularly."
-      />
+    <MotionSection id="skills" className="border-t border-zinc-800/60 py-14">
+      <h2 className="mb-5 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">
+        Tech Stack
+      </h2>
 
-      <div className="space-y-5">
-        {skillCategories.map((group) => (
-          <div
-            key={group.category}
-            className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6"
-          >
-            <span className="w-40 shrink-0 font-mono text-xs text-zinc-500">
-              {group.category}
-            </span>
-            <div className="flex flex-wrap gap-1.5">
-              {group.items.map((skill) => (
-                <Badge key={skill}>{skill}</Badge>
-              ))}
+      <div className="flex flex-wrap gap-2.5">
+        {techStack.map((tech) => {
+          const iconUrl = tech.color
+            ? `https://cdn.simpleicons.org/${tech.slug}/${tech.color}`
+            : `https://cdn.simpleicons.org/${tech.slug}`;
+
+          return (
+            <div
+              key={tech.name}
+              className="inline-flex items-center gap-2 rounded-xl border border-zinc-800/90 bg-zinc-900/60 px-3.5 py-2 text-sm font-medium text-zinc-200 transition-all duration-150 hover:-translate-y-0.5 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white"
+            >
+              <img
+                src={iconUrl}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                className="h-4 w-4 shrink-0 object-contain"
+              />
+              <span>{tech.name}</span>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </MotionSection>
   );

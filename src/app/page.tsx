@@ -27,10 +27,10 @@ export default async function HomePage() {
         />
       </div>
       <GitHubActivity data={githubData} />
-      <About />
-      <Experience />
       <Projects />
       <Skills />
+      <About />
+      <Experience />
       <RecentPosts posts={posts} />
       <Contact />
     </>

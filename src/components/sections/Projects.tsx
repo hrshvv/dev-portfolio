@@ -6,19 +6,18 @@ import { ProjectCard } from "@/components/ui/ProjectCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Projects() {
-  const featuredProjects = projects.filter((p) => p.featured);
+  const featuredProjects = projects.filter((p) => p.featured).slice(0, 2);
 
   return (
     <MotionSection id="projects" className="border-t border-zinc-800/60 py-16">
       <div className="flex items-end justify-between gap-4">
         <SectionHeading
-          eyebrow="03 / Projects"
-          title="Featured Work"
-          description="Selected systems, developer tools, and full-stack applications I've built."
+          eyebrow="Featured"
+          title="Projects"
         />
       </div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         {featuredProjects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
@@ -28,9 +27,9 @@ export function Projects() {
         <div className="mt-6">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-100"
+            className="inline-flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/60 px-4 py-2 font-mono text-xs font-medium text-zinc-200 transition-colors hover:border-zinc-700 hover:bg-zinc-800 hover:text-white"
           >
-            <span>View all projects</span>
+            <span>See more projects</span>
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>

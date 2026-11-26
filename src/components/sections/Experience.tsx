@@ -9,7 +9,7 @@ export function Experience() {
       id="experience"
       className="border-t border-zinc-800/60 py-16"
     >
-      <SectionHeading eyebrow="02 / Experience" title="Work History" />
+      <SectionHeading eyebrow="03 / Experience" title="Work History" />
 
       <div className="relative space-y-10 border-l border-zinc-800 pl-6">
         {experiences.map((exp) => (

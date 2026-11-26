@@ -1,6 +1,9 @@
 export interface Project {
   title: string;
   slug: string;
+  category?: string;
+  statusColor?: "amber" | "emerald";
+  image?: string;
   tagline: string;
   description: string;
   techStack: string[];
@@ -14,6 +17,8 @@ export const projects: Project[] = [
   {
     title: "Retriev",
     slug: "retriev",
+    category: "Personal project",
+    statusColor: "amber",
     tagline: "Open-source AI workspace & knowledge retrieval platform",
     description:
       "An open-source AI workspace designed to build, manage, and deploy configurable AI agents powered by personal knowledge bases and real-time retrieval.",
@@ -26,6 +31,8 @@ export const projects: Project[] = [
   {
     title: "NexDocs",
     slug: "nexdocs",
+    category: "Professional project",
+    statusColor: "emerald",
     tagline: "Enterprise document management & workflow engine",
     description:
       "A secure document management platform featuring fine-grained access control, configurable approval workflows, and fast full-text document search.",

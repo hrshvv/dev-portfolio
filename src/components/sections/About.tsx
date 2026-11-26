@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export function About() {
   return (
     <MotionSection id="about" className="border-t border-zinc-800/60 py-16">
-      <SectionHeading eyebrow="01 / About" title="What I Do" />
+      <SectionHeading eyebrow="02 / About" title="What I Do" />
 
       <div className="space-y-4 text-sm leading-relaxed text-zinc-400 sm:text-base">
         {profile.aboutParagraphs.map((paragraph, index) => (
