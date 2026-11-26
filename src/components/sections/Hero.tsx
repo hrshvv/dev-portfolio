@@ -11,11 +11,10 @@ import {
   Mail,
   MapPin,
   MessageCircle,
-  Pause,
-  Play,
   Terminal,
   Twitter,
 } from "lucide-react";
+import { FootballBanner } from "@/components/football/FootballBanner";
 import { profile, type SocialLink } from "@/data/profile";
 
 function SocialIcon({ icon }: { icon: SocialLink["icon"] }) {
@@ -46,7 +45,6 @@ function VerifiedBadge() {
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
-  const [bannerPlaying, setBannerPlaying] = useState(true);
   const [avatarAlt, setAvatarAlt] = useState(false);
   const [timeString, setTimeString] = useState<string>("");
 
@@ -79,53 +77,11 @@ export function Hero() {
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       className="pt-10 pb-10 sm:pt-12 sm:pb-10"
     >
-      {/* Cover Banner */}
-      <div className="relative h-40 w-full overflow-hidden rounded-xl border border-zinc-800/80 sm:h-48">
-        <div
-          className={`absolute inset-0 bg-[radial-gradient(circle_at_18%_50%,#ec4899_0%,transparent_48%),radial-gradient(circle_at_45%_55%,#f59e0b_0%,transparent_42%),radial-gradient(circle_at_72%_45%,#3b82f6_0%,transparent_52%),linear-gradient(120deg,#831843_0%,#1e1b4b_60%,#09090b_100%)] transition-transform duration-1000 ${
-            bannerPlaying ? "scale-105" : "scale-100"
-          }`}
-        />
-        {/* Subtle film-grain texture */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-25 mix-blend-overlay"
-          style={{
-            backgroundImage:
-              "radial-gradient(rgba(255,255,255,0.45) 0.5px, transparent 0.5px)",
-            backgroundSize: "4px 4px",
-          }}
-        />
-
-        {/* Centered Stacked Banner Typography */}
-        <div className="relative z-10 flex h-full flex-col items-center justify-center select-none">
-          {profile.bannerLines.map((line, index) => (
-            <span
-              key={index}
-              className="text-xl font-extrabold tracking-[0.22em] text-white/95 drop-shadow-sm sm:text-2xl"
-            >
-              {line}
-            </span>
-          ))}
-        </div>
-
-        {/* Banner Pause / Play Control */}
-        <button
-          type="button"
-          onClick={() => setBannerPlaying((prev) => !prev)}
-          aria-label={bannerPlaying ? "Pause banner motion" : "Play banner motion"}
-          className="absolute right-3 bottom-3 z-10 flex h-7 w-7 items-center justify-center rounded-full border border-white/15 bg-zinc-950/75 text-zinc-100 backdrop-blur-sm transition-colors hover:bg-zinc-900"
-        >
-          {bannerPlaying ? (
-            <Pause className="h-3.5 w-3.5" />
-          ) : (
-            <Play className="h-3.5 w-3.5" />
-          )}
-        </button>
-      </div>
+      {/* Cover Banner — Interactive Pixel Football */}
+      <FootballBanner />
 
       {/* Avatar Row + Live Clock */}
-      <div className="relative flex items-end justify-between px-1">
+      <div className="relative z-10 flex items-end justify-between px-1">
         <div className="flex items-end gap-3">
           <button
             type="button"

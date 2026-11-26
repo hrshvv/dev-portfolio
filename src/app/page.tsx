@@ -21,10 +21,7 @@ export default async function HomePage() {
     <>
       <Hero />
       <div className="pb-12">
-        <MusicPlayer
-          tracks={profile.favoriteTracks}
-          spotifyPlaylistUrl={profile.spotifyPlaylistUrl}
-        />
+        <MusicPlayer tracks={profile.favoriteTracks} />
       </div>
       <GitHubActivity data={githubData} />
       <Projects />
