@@ -1,21 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { profile } from "@/data/profile";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Projects", href: "/#projects" },
+  { label: "Projects", href: "/projects" },
   { label: "Certifications", href: "/certifications" },
-  { label: "Experience", href: "/#experience" },
-  { label: "About", href: "/#about" },
+  { label: "Experience", href: "/experience" },
+  { label: "About", href: "/about" },
 ];
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
+  const pathname = usePathname();
+
+  function handleConnectClick(e: MouseEvent<HTMLAnchorElement>) {
+    setMobileOpen(false);
+    if (pathname === "/") {
+      e.preventDefault();
+      document
+        .getElementById("contact")
+        ?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-800/60 bg-zinc-950/80 backdrop-blur-md">
@@ -36,7 +47,11 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-zinc-400 transition-colors hover:text-zinc-100"
+              className={`text-sm transition-colors ${
+                pathname === link.href
+                  ? "font-medium text-zinc-100"
+                  : "text-zinc-400 hover:text-zinc-100"
+              }`}
             >
               {link.label}
             </Link>
@@ -45,6 +60,7 @@ export function Navbar() {
           <div className="flex items-center gap-2.5">
             <Link
               href="/#contact"
+              onClick={handleConnectClick}
               className="rounded-full border border-zinc-800 bg-zinc-900 px-3.5 py-1.5 font-mono text-xs text-zinc-200 transition-colors hover:border-zinc-700 hover:bg-zinc-800"
             >
               Connect
@@ -102,15 +118,19 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm text-zinc-300 transition-colors hover:text-white"
+                className={`text-sm transition-colors ${
+                  pathname === link.href
+                    ? "font-medium text-white"
+                    : "text-zinc-300 hover:text-white"
+                }`}
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/#contact"
-              onClick={() => setMobileOpen(false)}
-              className="w-fit rounded-md border border-zinc-800 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-200"
+              onClick={handleConnectClick}
+              className="w-fit rounded-full border border-zinc-800 bg-zinc-900 px-3.5 py-1.5 font-mono text-xs text-zinc-200"
             >
               Connect
             </Link>

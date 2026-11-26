@@ -45,7 +45,10 @@ export function Contact() {
   }
 
   return (
-    <MotionSection id="contact" className="border-t border-zinc-800/60 py-14">
+    <MotionSection
+      id="contact"
+      className="scroll-mt-20 border-t border-zinc-800/60 py-14"
+    >
       <SectionHeading eyebrow="Connect" title="Let's Talk" />
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">

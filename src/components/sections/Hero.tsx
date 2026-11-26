@@ -159,6 +159,12 @@ export function Hero() {
 
         <a
           href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            document
+              .getElementById("contact")
+              ?.scrollIntoView({ behavior: "smooth", block: "center" });
+          }}
           className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/70 px-4 py-2 text-xs font-medium text-zinc-200 transition-colors hover:border-zinc-700 hover:bg-zinc-800 sm:text-sm"
         >
           <MessageCircle className="h-3.5 w-3.5 text-zinc-400" />
