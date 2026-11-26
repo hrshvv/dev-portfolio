@@ -4,44 +4,49 @@ import { MotionSection } from "@/components/ui/MotionSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Experience() {
+  const currentExperience = experiences.slice(0, 1);
+
   return (
     <MotionSection
       id="experience"
-      className="border-t border-zinc-800/60 py-16"
+      className="border-t border-zinc-800/60 py-14"
     >
-      <SectionHeading eyebrow="03 / Experience" title="Work History" />
+      <SectionHeading eyebrow="Career" title="Work Experience" />
 
-      <div className="relative space-y-10 border-l border-zinc-800 pl-6">
-        {experiences.map((exp) => (
-          <div key={`${exp.company}-${exp.period}`} className="relative">
-            {/* Timeline Node */}
-            <span className="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full border border-zinc-700 bg-zinc-950" />
-
+      <div className="space-y-6">
+        {currentExperience.map((exp) => (
+          <div
+            key={`${exp.company}-${exp.period}`}
+            className="rounded-2xl border border-zinc-800/80 bg-zinc-900/20 p-6"
+          >
             <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
               <div>
                 <h3 className="text-base font-semibold text-zinc-100">
-                  {exp.role}
+                  {exp.company}
                 </h3>
-                <p className="text-sm text-zinc-400">
-                  {exp.company} ·{" "}
-                  <span className="text-zinc-500">{exp.location}</span>
-                </p>
+                <p className="text-sm text-zinc-400">{exp.role}</p>
               </div>
-              <span className="font-mono text-xs text-zinc-500">
-                {exp.period}
-              </span>
+              <div className="text-left sm:text-right">
+                <p className="font-mono text-xs text-zinc-400">{exp.period}</p>
+                <p className="text-xs text-zinc-500">{exp.location}</p>
+              </div>
             </div>
 
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-zinc-400">
-              {exp.highlights.map((item, idx) => (
-                <li key={idx} className="flex gap-2">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-600" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-5">
+              <p className="mb-2.5 text-xs font-semibold text-zinc-200">
+                What I&apos;ve done
+              </p>
+              <ul className="space-y-2 text-sm leading-relaxed text-zinc-400">
+                {exp.highlights.map((item, idx) => (
+                  <li key={idx} className="flex gap-2.5">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-600" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-            <div className="mt-4 flex flex-wrap gap-1.5">
+            <div className="mt-5 flex flex-wrap gap-1.5">
               {exp.techStack.map((tech) => (
                 <Badge key={tech}>{tech}</Badge>
               ))}

@@ -1,14 +1,13 @@
 import { MotionSection } from "@/components/ui/MotionSection";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Insights() {
   return (
     <MotionSection id="insights" className="border-t border-zinc-800/60 py-14">
       {/* Header Row */}
-      <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-400">
-          Insights
-        </h2>
-        <span className="text-xs text-zinc-400">Last 7 days</span>
+      <div className="flex items-end justify-between gap-4">
+        <SectionHeading eyebrow="Analytics" title="Insights" />
+        <span className="mb-8 text-xs text-zinc-400">Last 7 days</span>
       </div>
 
       {/* Main Analytics Card */}

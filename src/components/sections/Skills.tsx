@@ -1,12 +1,11 @@
 import { techStack } from "@/data/skills";
 import { MotionSection } from "@/components/ui/MotionSection";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Skills() {
   return (
     <MotionSection id="skills" className="border-t border-zinc-800/60 py-14">
-      <h2 className="mb-5 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">
-        Tech Stack
-      </h2>
+      <SectionHeading eyebrow="Technologies" title="Tech Stack" />
 
       <div className="flex flex-wrap gap-2.5">
         {techStack.map((tech) => {

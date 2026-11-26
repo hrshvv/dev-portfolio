@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { certifications } from "@/data/certifications";
 import { CertificationCard } from "@/components/ui/CertificationCard";
 import { MotionSection } from "@/components/ui/MotionSection";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Certifications() {
   const previewCerts = certifications.slice(0, 2);
@@ -12,11 +13,7 @@ export function Certifications() {
       id="certifications"
       className="border-t border-zinc-800/60 py-14"
     >
-      <div className="mb-6">
-        <h2 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-400">
-          Certifications
-        </h2>
-      </div>
+      <SectionHeading eyebrow="Credentials" title="Certifications" />
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         {previewCerts.map((cert) => (

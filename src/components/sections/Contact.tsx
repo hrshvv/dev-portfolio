@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { ArrowRight, ArrowUpRight, Linkedin, Mail, MapPin } from "lucide-react";
 import { profile } from "@/data/profile";
 import { MotionSection } from "@/components/ui/MotionSection";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 function XIcon() {
   return (
@@ -45,11 +46,7 @@ export function Contact() {
 
   return (
     <MotionSection id="contact" className="border-t border-zinc-800/60 py-14">
-      <div className="mb-6">
-        <h2 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-400">
-          Let&apos;s Talk
-        </h2>
-      </div>
+      <SectionHeading eyebrow="Connect" title="Let's Talk" />
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         {/* Left Card: Direct Links */}

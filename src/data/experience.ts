@@ -20,16 +20,4 @@ export const experiences: ExperienceItem[] = [
     ],
     techStack: ["TypeScript", "Node.js", "NestJS", "PostgreSQL", "Redis", "Next.js"],
   },
-  {
-    company: "Studio SixtySix",
-    role: "Frontend Developer",
-    period: "2022 — 2024",
-    location: "Hybrid",
-    highlights: [
-      "Built responsive, accessible web applications and reusable component libraries in React and Tailwind CSS.",
-      "Collaborated closely with backend engineers to integrate REST and WebSocket APIs cleanly.",
-      "Improved Core Web Vitals and bundle size across production client portals.",
-    ],
-    techStack: ["React", "TypeScript", "Next.js", "Tailwind CSS", "REST APIs"],
-  },
 ];
