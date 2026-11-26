@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import {
@@ -14,8 +15,23 @@ import {
   Terminal,
   Twitter,
 } from "lucide-react";
-import { FootballBanner } from "@/components/football/FootballBanner";
 import { profile, type SocialLink } from "@/data/profile";
+
+const FootballBanner = dynamic(
+  () =>
+    import("@/components/football/FootballBanner").then(
+      (mod) => mod.FootballBanner
+    ),
+  {
+    ssr: false,
+    loading: () => (
+      <div
+        aria-hidden="true"
+        className="h-40 w-full rounded-xl border border-zinc-800/80 bg-neutral-950 sm:h-48"
+      />
+    ),
+  }
+);
 
 function SocialIcon({ icon }: { icon: SocialLink["icon"] }) {
   switch (icon) {

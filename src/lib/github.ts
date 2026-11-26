@@ -69,7 +69,10 @@ export async function getGitHubActivity(
       `https://github-contributions-api.jogruber.de/v4/${encodeURIComponent(
         username
       )}?y=last`,
-      { next: { revalidate: 3600 } }
+      {
+        next: { revalidate: 3600 },
+        signal: AbortSignal.timeout(2500),
+      }
     );
 
     if (!res.ok) {
